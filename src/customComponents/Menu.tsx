@@ -3,7 +3,15 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Separator } from "@/components/ui/separator";
-import { CircleMinus, CirclePlus, Minus, Plus, ShoppingCart, Star, X } from "lucide-react";
+import {
+  CircleMinus,
+  CirclePlus,
+  Minus,
+  Plus,
+  ShoppingCart,
+  Star,
+  X,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import useFoodStore from "@/store/useStore";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -37,9 +45,11 @@ export default function Menu() {
           {Array(5)
             .fill(null)
             .map((_, index) => (
-              <Skeleton className="h-[200px] w-[200px] rounded-full" />
+              <Skeleton key={index} className="h-[200px] w-[200px] rounded-full" />
             ))}
         </div>
+
+        <Separator className="h-[2px]" />
 
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-x-10 gap-y-10">
           {Array(15)
@@ -67,17 +77,7 @@ export default function Menu() {
         id="menu"
         className="flex flex-col p-[10%] pt-[5%] gap-[13vh] select-none"
       >
-        <div className="flex flex-col gap-5">
-          <h1 className="text-5xl">Explore our menu</h1>
-          <p className="text-xl">
-            Choose from a diverse menu featuring a delectable array of dishes
-            crafted with the finest ingredients and culinary expertise. Our
-            mission is to satisfy your cravings and elevate your dining
-            experience, one delicious meal at a time.
-          </p>
-        </div>
-        <Separator className="h-[2px]" />
-        <div className="my-[-6vh]">
+        <div className="mb-[-6vh]">
           <h2 className="text-center text-3xl">Categories</h2>
         </div>
         <div className="flex gap-6 justify-between items-center pt-3">
@@ -86,7 +86,9 @@ export default function Menu() {
               <div
                 key={item.category}
                 onClick={() =>
-                  setCategory((prevItem) => (prevItem === item.category ? "All" : item.category))
+                  setCategory((prevItem) =>
+                    prevItem === item.category ? "All" : item.category
+                  )
                 }
                 className="cursor-pointer flex flex-col items-center gap-2"
               >
@@ -125,6 +127,7 @@ export default function Menu() {
             );
           })}
         </div>
+        <Separator className="h-[2px]" />
 
         <div className="flex flex-col">
           <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-x-10 gap-y-10">
@@ -207,10 +210,12 @@ export default function Menu() {
               <span>Clear Cart</span>
               <X className="h-5 w-5" />
             </Button>
-            
+
             <Link href="/my-cart">
               <Button className="flex items-center gap-2">
-                <span>Go to Cart</span>
+                <span>{Object.keys(cartItems).length}</span>
+                <X className="h-5 w-5 inline-block" />
+                <span> Go to Cart</span>
                 <ShoppingCart className="h-5 w-5" />
               </Button>
             </Link>
