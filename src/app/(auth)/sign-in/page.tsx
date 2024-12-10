@@ -16,9 +16,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signInSchema } from "@/zod-schemas/signInSchema";
 import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
-export default function SignInForm() {
+function SignInForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
@@ -121,5 +121,13 @@ export default function SignInForm() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInForm />
+    </Suspense>
   );
 }
