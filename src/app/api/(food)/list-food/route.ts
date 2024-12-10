@@ -1,6 +1,8 @@
 import dbConnect from "@/lib/dbConnect";
 import newFoodModel from "@/model/newFoodModel";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   await dbConnect();
 

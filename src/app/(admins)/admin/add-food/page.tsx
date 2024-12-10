@@ -38,6 +38,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { foodCategories } from "@/model/foodModel";
 import { FoodUploadValidationSchema } from "@/zod-schemas/foodSchema";
 
+export const dynamic = "force-dynamic";
+
 export default function AddFood() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 

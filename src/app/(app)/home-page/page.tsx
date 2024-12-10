@@ -8,6 +8,8 @@ import useFoodStore from "@/store/useStore";
 import { useSession } from "next-auth/react";
 import { useEffect, useRef } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   const {
     isLoading,

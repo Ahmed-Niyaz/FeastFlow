@@ -16,6 +16,8 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function Food() {
   const [foodList, setFoodList] = useState<FooodItemInterface[]>([]);
   const { toast } = useToast();
@@ -52,7 +54,6 @@ export default function Food() {
     }
   };
 
-  
   return (
     <div className="h-[85vh] flex flex-col">
       <div className="overflow-x-auto">
@@ -68,14 +69,16 @@ export default function Food() {
           </TableHeader>
         </Table>
       </div>
-      
+
       <div className="flex-1 overflow-y-auto">
         <Table>
           <TableBody>
             {foodList.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={5} className="text-center py-8">
-                  <p className="text-muted-foreground">No food items available</p>
+                  <p className="text-muted-foreground">
+                    No food items available
+                  </p>
                 </TableCell>
               </TableRow>
             ) : (
@@ -112,4 +115,3 @@ export default function Food() {
     </div>
   );
 }
-

@@ -22,6 +22,8 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+export const dynamic = "force-dynamic";
+
 type OrderStatus = "Processing" | "Out for Delivery" | "Delivered";
 
 interface OrderItem {

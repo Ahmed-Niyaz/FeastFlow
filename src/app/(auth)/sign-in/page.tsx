@@ -18,6 +18,8 @@ import { signInSchema } from "@/zod-schemas/signInSchema";
 import { signIn } from "next-auth/react";
 import { Suspense, useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 function SignInForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();

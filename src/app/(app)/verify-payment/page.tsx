@@ -5,6 +5,8 @@ import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function VerifyPaymentPage() {
   const { clearCart } = useFoodStore();
   const searchParams = useSearchParams();
