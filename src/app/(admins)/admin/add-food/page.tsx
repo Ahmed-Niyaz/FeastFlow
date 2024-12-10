@@ -38,14 +38,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { foodCategories } from "@/model/foodModel";
 import { FoodUploadValidationSchema } from "@/zod-schemas/foodSchema";
 
-export enum FoodCategory {
-  APPETIZER = "Appetizer",
-  MAIN_COURSE = "Main-course",
-  DESSERT = "Dessert",
-  BEVERAGE = "Beverages",
-  SIDE_DISH = "Side-dish",
-}
-
 export default function AddFood() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -107,7 +99,11 @@ export default function AddFood() {
                   <FormItem>
                     <FormLabel>Upload Image URL</FormLabel>
                     <FormControl>
-                      <Input {...field} type="text" placeholder="Enter image URL" />
+                      <Input
+                        {...field}
+                        type="text"
+                        placeholder="Enter image URL"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -121,7 +117,11 @@ export default function AddFood() {
                   <FormItem>
                     <FormLabel>Food Name</FormLabel>
                     <FormControl>
-                      <Input {...field} type="text" placeholder="Enter food name" />
+                      <Input
+                        {...field}
+                        type="text"
+                        placeholder="Enter food name"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -135,7 +135,10 @@ export default function AddFood() {
                   <FormItem>
                     <FormLabel>Food Description</FormLabel>
                     <FormControl>
-                      <Textarea {...field} placeholder="Enter food description" />
+                      <Textarea
+                        {...field}
+                        placeholder="Enter food description"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -150,7 +153,11 @@ export default function AddFood() {
                     <FormItem>
                       <FormLabel>Price</FormLabel>
                       <FormControl>
-                        <Input {...field} type="number" placeholder="Enter price" />
+                        <Input
+                          {...field}
+                          type="number"
+                          placeholder="Enter price"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -187,11 +194,7 @@ export default function AddFood() {
               </div>
             </div>
 
-            <Button
-              type="submit"
-              className="w-full"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
