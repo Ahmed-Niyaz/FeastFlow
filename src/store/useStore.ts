@@ -30,7 +30,7 @@ interface FoodStore {
 }
 
 const FOOD_LIST_STORAGE_KEY = 'food-list-cache';
-const CACHE_DURATION = 1000 * 60 * 60; // 1 hour in milliseconds
+const CACHE_DURATION = 5000;
 const CART_STORAGE_KEY = "food-cart-items";
 
 const useFoodStore = create<FoodStore>()(

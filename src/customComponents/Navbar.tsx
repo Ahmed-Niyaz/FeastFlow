@@ -103,7 +103,7 @@ export default function Navbar() {
       <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
         <div className="container p-4 mx-auto flex md:flex-row justify-between items-center">
           <div className="flex justify-center items-center">
-            <Link href="/home-page">
+            <Link href="/">
               <span className="text-red-600 text-4xl text-center font-bold">
                 FeastFlow <Soup size={40} className="inline-block pb-2"/>
               </span>

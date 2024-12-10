@@ -56,9 +56,13 @@ export default function AddFood() {
 
   const onSubmit = async (data: z.infer<typeof FoodUploadValidationSchema>) => {
     setIsSubmitting(true);
+    const transformedData = {
+      ...data,
+      price: Number(data.price)
+    };
 
     try {
-      const response = await axios.post("/api/add-food", data);
+      const response = await axios.post("/api/add-food", transformedData);
 
       if (response.data.success) {
         form.reset({
@@ -157,7 +161,7 @@ export default function AddFood() {
                       <FormControl>
                         <Input
                           {...field}
-                          type="number"
+                          type="text"
                           placeholder="Enter price"
                         />
                       </FormControl>
