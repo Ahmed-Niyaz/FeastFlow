@@ -2,7 +2,7 @@
 
 A modern food ordering web application built with Next.js that allows users to browse menus, place orders, and track their order status in real-time. Featuring a powerful admin dashboard for restaurant management.
 
-## [Live Project](https://feast-flow-project.vercel.app/)
+## [Live Project](https://feast-flow-project.vercel.app)
 
 ## ✨ Features
 
