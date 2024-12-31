@@ -40,9 +40,11 @@ A modern food ordering web application built with Next.js that allows users to b
 
 ## 🚀 Key Features Implementation
 
-- **Smart Caching**: Local storage caching for food items with configurable duration
-- **Seamless Cart Sync**: Real-time synchronization between local storage and database
-- **Live Updates**: Automatic polling for order status changes
+- **Food Filtering**: Browse and filter food items efficiently by categories.
+- **Cart Management**: Add or remove items to/from the cart with ease.
+- **Checkout Process**: Streamlined checkout with delivery details and order summary.
+- **Payment Integration**: Secure payment handling for seamless transactions.
+- **Delivery Tracking**: Real-time updates on order status (Processing, Out for Delivery, Delivered).
 
 ## 💻 Local Development
 
